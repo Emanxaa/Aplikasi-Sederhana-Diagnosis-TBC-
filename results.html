@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hasil Prediksi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f2f6fc;
+    }
+    .bill-card {
+      max-width: 600px;
+      margin: auto;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      background: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .bill-header {
+      text-align: center;
+      padding: 15px;
+      border-bottom: 2px dashed #ccc;
+    }
+    .bill-header h2 {
+      margin: 0;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .bill-section {
+      padding: 20px;
+    }
+    .bill-section h5 {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    .bill-list li {
+      border: none;
+      padding: 6px 0;
+      font-size: 15px;
+    }
+    .bill-footer {
+      border-top: 2px dashed #ccc;
+      padding: 15px;
+      text-align: center;
+    }
+    .status-box {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    .status-pos {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    .status-neg {
+      background-color: #d4edda;
+      color: #155724;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container py-5">
+    <div class="bill-card shadow">
+      
+      <!-- Header -->
+      <div class="bill-header">
+        <h2>Upaya Deteksi TBC</h2>
+        <p class="text-muted">Hasil Prediksi Diagnosis Pasien</p>
+      </div>
+
+      <!-- Status -->
+      <div class="bill-section text-center">
+        <div class="status-box {% if pred == 'Terdiagnosis' %}status-pos{% else %}status-neg{% endif %}">
+          {{ pred }}
+        </div>
+      </div>
+
+      <!-- Data Pasien -->
+      <div class="bill-section">
+        <h5>📋 Data Pasien</h5>
+        <ul class="list-group bill-list">
+          {% for f, v in data %}
+            <li class="list-group-item">{{ f }}: {{ v if v==v else "Tidak diisi" }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Footer -->
+      <div class="bill-footer">
+        <small class="text-muted">Dicetak otomatis oleh sistem prediksi medis</small><br>
+        <a href="/" class="btn btn-secondary btn-sm mt-2">⬅ Kembali</a>
+        <button class="btn btn-primary btn-sm mt-2" onclick="window.print()">🖨 Cetak</button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

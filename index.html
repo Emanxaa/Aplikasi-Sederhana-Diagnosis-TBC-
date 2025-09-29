@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediksi Diagnosis</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <div class="card shadow p-4">
+      <h2 class="text-center text-primary mb-4">Form Prediksi Diagnosis Pasien</h2>
+      
+      <form method="POST" class="row g-3">
+        
+        <!-- Ketergantungan -->
+        <div class="col-md-6">
+          <label class="form-label">Ketergantungan</label>
+          <select name="ketergantungan" class="form-select">
+            <option value="">(Kosong)</option>
+            <option value="0">Tidak Ada</option>
+            <option value="1">Obat</option>
+            <option value="2">Rokok</option>
+          </select>
+        </div>
+        
+        <!-- Batuk -->
+        <div class="col-md-6">
+          <label class="form-label">Keluhan Batuk</label><br>
+          <input type="radio" name="batuk" value="0"> Tidak
+          <input type="radio" name="batuk" value="1"> Ya
+          <input type="radio" name="batuk" value="" checked> (Kosong)
+        </div>
+
+        <!-- Sesak -->
+        <div class="col-md-6">
+          <label class="form-label">Keluhan Sesak Nafas</label><br>
+          <input type="radio" name="sesak" value="0"> Tidak
+          <input type="radio" name="sesak" value="1"> Ya
+          <input type="radio" name="sesak" value="" checked> (Kosong)
+        </div>
+
+        <!-- Demam -->
+        <div class="col-md-6">
+          <label class="form-label">Keluhan Demam</label><br>
+          <input type="radio" name="demam" value="0"> Tidak
+          <input type="radio" name="demam" value="1"> Ya
+          <input type="radio" name="demam" value="" checked> (Kosong)
+        </div>
+
+        <!-- Diagnosa Awal -->
+        <div class="col-md-6">
+          <label class="form-label">Diagnosa Awal</label>
+          <select name="diagnosa_awal" class="form-select">
+            <option value="">(Kosong)</option>
+            <option value="0">Tidak Terkait Paru</option>
+            <option value="1">TBC</option>
+            <option value="2">Paru Bukan TBC</option>
+          </select>
+        </div>
+
+        <!-- Riwayat -->
+        <div class="col-md-6">
+          <label class="form-label">Riwayat Penyakit Sebelumnya</label>
+          <select name="riwayat" class="form-select">
+            <option value="">(Kosong)</option>
+            <option value="0">Tidak Terkait Paru</option>
+            <option value="1">TBC</option>
+            <option value="2">Paru Bukan TBC</option>
+          </select>
+        </div>
+
+        <!-- Jenis Kelamin -->
+        <div class="col-md-6">
+          <label class="form-label">Jenis Kelamin</label><br>
+          <input type="radio" name="jenis_kelamin" value="0"> Laki-laki
+          <input type="radio" name="jenis_kelamin" value="1"> Perempuan
+          <input type="radio" name="jenis_kelamin" value="" checked> (Kosong)
+        </div>
+
+        <!-- Usia -->
+        <div class="col-md-6">
+          <label class="form-label">Usia</label>
+          <input type="number" name="usia" class="form-control" placeholder="Masukkan usia">
+        </div>
+
+        <!-- Tombol -->
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary btn-lg mt-3">🔍 Prediksi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
